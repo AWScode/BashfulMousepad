@@ -3,11 +3,18 @@ import java.util.Scanner;
 public class CoffeeShop{
   public static void main(String[] arg){
     Scanner in= new Scanner(System.in);
-    System.out.println("Welcome to Awful Coffee, may I take your order?");
+    System.out.println("Welcome to Awful Coffee. \nWe have awuful Cappuchino, green tea Frappuchino, Bitter Lemonade, surprise drink.\n Are you ready now?");
     String a = in.nextLine();
 
+    if (a.equals("Yes")||a.equals("yes"))
+       System.out.println("May I have your order?");
+    else
+       System.out.println("Okay, take your time. I will comeback. \nFive minutes later... \nMay I have your order now?");
+    Scanner in3= new Scanner(System.in);
+    String d = in3.nextLine();
+
     Scanner in1= new Scanner(System.in);
-    System.out.println("Do you want extra cream or no cream it?");
+    System.out.println("Do you want extra cream or no cream on it?");
     String b = in1.nextLine();
 
     Scanner in2= new Scanner(System.in);
@@ -16,6 +23,6 @@ public class CoffeeShop{
 
     System.out.println("Thank you. One moment please.");
 
-    System.out.println(c+", your "+ a +" with "+ b + " is ready.");
+    System.out.println(c+", this is your "+ d +" with "+ b + " is ready.");
   }
 }
