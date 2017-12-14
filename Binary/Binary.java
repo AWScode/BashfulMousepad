@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.lang.Math;
 public class Binary {
       public static void main(String[] arg){
       Scanner in1= new Scanner(System.in);
@@ -245,59 +245,64 @@ public class Binary {
       else if(a.length()>b.length()) {
         int numbera1a=0;
         int numbera1b=0;
-        int resulta[]=new int[8];
-        int resultend []  =new int[8];
-        resultend[0]=1;
+        int resulta[] =new int[8];
+        for(int i=0;i<8;i++){
+          resulta[i]=0;
+          }
+        int resultend[] =new int[8];
+        for(int i=0;i<8;i++){
+          resultend[i]=0;
+          }
+        int sample []  =new int[8];
+        sample[0]=1;
         for(int i=1;i<8;i++){
           resultend[i]=0;
           }
-          int sample []  =new int[8];
-          sample[0]=1;
-          for(int i=1;i<8;i++){
-          resultend[i]=0;
-        }
         while((numbera1a > numbera1b)||(numbera1a==numbera1b)){
 
           for(int i=0;i<8;i++){
-            while(numbera [i]==-1){
+            while (numbera [i]== -1){
               numbera [i]=1;
               numbera [i+1]=numbera [i+1]-1;
               }
             if((numbera [i]==0 && numberb [i]==0)||numbera [i]==1){
-                resulta [i]=numbera [i]-numberb [i];
+                resulta[i]=numbera [i]-numberb [i];
               }
-            else{
+            else if(numbera [i]==0 && numberb [i]==1){
               resulta [i]=1;
               numbera [i+1]= numbera[i+1]-1;
             }
           }
-            for(int d=0;d<8;d++){
-              numbera[d]=resulta[d];
-            }
-            for(int g=0;g<8;g++){// print the array
-              System.out.print(numbera[g]);}
-            for(int z=0;z<8;z++){
-            while(resultend [z]==2){
-              resultend [z]=0;
-              resultend [z+1]=resultend[z+1]+1;
-            }
-            if(resultend [z]==0||sample [z]==0){
-              result [z]=resultend [z]+ sample [z];
-            }
-            else{
-              result[z]=0;
-              resultend[z+1]= resultend[z+1]+1;
-            }
+          for(int f=0;f<8;f++){
+            numbera[f]=resulta[f];
           }
-      for(int i=0;i<8;i++){
-        numbera1a=numbera1a+(result[i]*(int)Math.pow(10, i));
-      }
-        System.out.print(numbera1a);
-      numbera1b = Integer.parseInt(b);
-      System.out.print(numbera1b);
+          numbera1b = Integer.parseInt(b);
+            for(int z=0;z<8;z++){
+              while(resultend [z]==2){
+                resultend [z]=0;
+                resultend [z+1]=resultend[z+1]+1;
+                }
+              if(resultend [z]==0||sample [z]==0){
+                result [z]=resultend [z]+ sample [z];
+                }
+              else{
+                result[z]=0;
+                resultend[z+1]= resultend[z+1]+1;
+              }
+          }
+            for(int k=0;k<8;k++){
+              resultend[k]=result[k];
+            }
+            for(int h=0;h<8;h++){
+              int numbercc = (numbera [h])* (int)java.lang.Math.pow(10,h);
+              numbera1a=numbercc+numbera1a;
+            }
+
     }
       }
       }
+
+
 
         for(int i=0;i<result.length/2;i++){// reverse the array of result
             int temp = result [i];
@@ -307,5 +312,5 @@ public class Binary {
       for(int i=0;i<8;i++){// print the array
         System.out.print(result[i]);
       }
-    }
   }
+}
